@@ -1,1 +1,473 @@
-Mücella benimle evlen :)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mücella & Abdurrahman</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#faf8f7">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml, %3Csvg class='loading_heart' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' viewBox='-10 -5 50 55' %3E%3Cpath d='M0 20 v-20 h20 a10,10 90 0,1 0,20 a10,10 90 0,1 -20,0 z' fill='%23bd945a' transform='rotate(225,18,14)'/%3E%3C/svg%3E" />
+<script src="asciify.js"></script>
+<style>
+@font-face {
+  font-family: "Cherolina";
+  src: url(Cherolina.ttf) format("truetype");
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #faf8f7;
+  color: #faf8f7;
+  min-height: 100% !important;
+  height: 100%;
+  scroll-behavior: smooth;
+  font-family: 'EB Garamond', serif;
+}
+a {
+  color: inherit;
+}
+table, td {
+  padding: 25px 20px;
+  border-collapse: collapse;
+}
+input {
+  font-family: 'EB Garamond', serif;
+}
+.section {
+  width: 100%;
+  padding: 20px 0px;
+}
+.full_width {
+  width: 100%;
+}
+.center_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.buton {
+  display: inline-block;
+  margin-top: 20px;
+  outline: none;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+  font-size: 26px;
+  letter-spacing: 5px;
+  border-radius: 8px;
+  padding: 18px 20px 14px 24px;
+  border: none;
+  background: linear-gradient(to right, #bd945a, #926e3a, #926e3a);
+  background-size: 200% auto;
+  transition: 1.0s;
+  color: #fff;
+}
+.buton:hover {
+  background-position: right center;
+}
+#loading_overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #faf8f7;
+  z-index: 1000;
+  transition: all .8s ease-in;
+}
+#loading_overlay.hidden {
+  opacity: 0;
+}
+.loading_heart {
+  width: 80px;
+  height: 80px;
+  animation: loading_bounce .5s cubic-bezier(0.3, 0.0, 0.8, 0.6) infinite alternate;
+}
+@keyframes loading_bounce {
+  to {
+    transform: scale(.7, .7);
+  }
+}
+.landing {
+  width: 100%;
+  height: 100%;
+  background-image: url(front.jpg);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.landing_names {
+    font-size: 140px;
+}
+.bouncy_heart {
+  font-family: 'Noto Sans JP';
+  font-size: 60px;
+  position: absolute;
+  bottom: 5px;
+  line-height: 1em;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  from, 22%, 54%, 80%, to {
+    animation-timing-function: cubic-bezier(0.2, 0.4, 0.6, 1.0);
+    transform: translate3d(0,0,0);
+  }
+  38% {
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.8, 0.6);
+    transform: translate3d(0, -50px, 0);
+  }
+  69% {
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.8, 0.6);
+    transform: translate3d(0, -25px, 0);
+  }
+  91% {
+    animation-timing-function: cubic-bezier(0.4, 0.0, 0.8, 0.6);
+    transform: translate3d(0,-8px,0);
+  }
+}
+.countdown {
+  width: 100%;
+  padding: 1.5em 0px;
+  background-image: url(countdown.jpg);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+@media only screen and (min-width : 1025px) {
+  .countdown {
+    background-attachment: fixed;
+  }
+}
+.countdown_blob {
+  margin: 0px .3em;
+}
+#div_rsvp_state {
+  text-align: left;
+}
+.and {
+  font-size: .7em;
+}
+.cursive {
+  font-family: 'Cherolina', 'Parisienne', cursive;
+}
+.gold {
+  color: #bd945a;
+}
+.gray {
+  color: #666;
+}
+.black {
+  color: #111;
+}
+.shadow {
+  text-shadow: #444 0px 0px 10px;
+}
+.bold {
+  font-weight: bold;
+}
+.sbig {
+  font-size: 80px;
+  font-size: 14vw;
+}
+.smid {
+  font-size: 50px;
+  font-size: 9vw;
+}
+.ssmall {
+  font-size: 25px;
+  font-size: 5vw;
+}
+.stiny {
+  font-size: 15px;
+  font-size: 3vw;
+}
+@media only screen and (min-width : 1000px) {
+  .sbig {
+    font-size: 80px;
+  }
+  .smid {
+    font-size: 50px;
+  }
+  .ssmall {
+    font-size: 25px;
+  }
+  .stiny {
+    font-size: 15px;
+  }
+}
+.rsvp_row > button {
+  border: solid 1px #bd945a;
+  border-radius: 4px;
+  color: #bd945a;
+  background: #faf8f7;
+  font: inherit;
+  letter-spacing: .05em;
+  padding: 0em .4em;
+  transition: .3s;
+  cursor: pointer;
+}
+.rsvp_row > button:hover {
+  color: #faf8f7;
+  background: #bd945a;
+}
+.rsvp_row > button.selected {
+  color: #faf8f7;
+  background: linear-gradient(to right, #bd945a, #926e3a);
+}
+.rsvp_row > * {
+  margin: 4px;
+}
+</style>
+</head>
+<body>
+  <div id="loading_overlay" class="center_content">
+    <svg class="loading_heart" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 40 40" >
+      <path 
+        d="M0 20 v-20 h20 
+           a10,10 90 0,1 0,20
+           a10,10 90 0,1 -20,0
+           z"
+        fill="#bd945a"
+        transform="rotate(225,18,14)"/>
+    </svg>
+  </div>
+  <div class="landing center_content shadow">
+      <div class="landing_names cursive">
+          Mücella <span class="and">&</span> Abdurrahman
+      </div>
+      <div class="ssmall">
+          May 19, 2024
+      </div>
+      <button class="buton shadow" onclick="div_rsvp.scrollIntoView();">RSVP</button>
+      <div class="bouncy_heart">♡</div>
+  </div>
+  <div class="section center_content center_text">
+      <div class="cursive gold sbig">
+        We're getting married!
+      </div>
+      <div class="ssmall gray">
+        <div style="height: 30px;"></div>
+        <div>
+          Sunday, May 19, 2023
+        </div>
+        <div>
+          5:00 p.m.
+        </div>
+      </div>
+  </div>
+  <div class="countdown smid shadow">
+    <div class="countdown_blob">
+      <div id="cd_days">?</div>
+      <div class="stiny">DAYS</div>
+    </div>
+    <div class="countdown_blob">
+      <div id="cd_hours">?</div>
+      <div class="stiny">HOURS</div>
+    </div>
+    <div class="countdown_blob">
+      <div id="cd_minutes">?</div>
+      <div class="stiny">MINUTES</div>
+    </div>
+    <div class="countdown_blob">
+      <div id="cd_seconds">?</div>
+      <div class="stiny">SECONDS</div>
+    </div>
+  </div>
+  <div class="section center_content">
+    <div class="cursive gold sbig">
+      Wedding Day
+    </div>
+    <table class="gray ssmall">
+      <tr style="border-bottom: 1px solid #ccc;">
+        <td style="text-align: right;">5:00 PM</td>
+        <td style="padding: 0px;">–</td>
+        <td style="text-align: left;">6:00 PM</td>
+        <td style="text-align: left;">COCKTAIL HOUR</td>
+      </tr>
+      <tr>
+        <td style="text-align: right;">6:00 PM</td>
+        <td style="padding: 0px;">–</td>
+        <td style="text-align: left;">10:00 PM</td>
+        <td style="text-align: left;">RECEPTION</td>
+      </tr>
+    </table>
+  </div>
+  <div class="section center_content">
+    <div class="cursive gold sbig">
+      Details
+    </div>
+    <div class="ssmall gray" style="line-height: 1.4em; text-align: left;">
+      <div class="black">
+        LOCATION
+      </div>
+      <div>
+        <a href="https://maps.app.goo.gl/drQJYiGLF2ou8ogT6" target="_blank">
+          The Madison Hotel
+        </a>
+      </div>
+      <div>
+        <a href="https://maps.app.goo.gl/drQJYiGLF2ou8ogT6" target="_blank">
+          1 Convent Rd, Morristown, NJ 07960
+        </a>
+      </div>
+      <div>&nbsp</div>
+      <div class="black">
+        ATTIRE
+      </div>
+      <div>
+        Formal
+      </div>
+      <div>
+        Let's get dressed and make the night divine
+      </div>
+      <div>&nbsp</div>
+      <div class="black">
+        RSVP
+      </div>
+      <div>
+        Kindly RSVP by March 28
+      </div>
+      <div>
+        Seats have been reserved in your honor
+      </div>
+    </div>
+  </div>
+  <div class="section center_content" id="div_rsvp">
+    <div class="gold cursive sbig">
+      Will you attend?
+    </div>
+    <input id="rsvp_name" type="text" class="ssmall" placeholder=" Full Name" style="margin: 10px;" onkeydown="if(event.keyCode == 13) { rsvp(); }">
+    <div id="div_rsvp_state" class="gray ssmall"></div>
+    <button id="rsvp_button" class="buton" onclick="rsvp();">RSVP</button>
+  </div>
+  <div class="section center_content smid gray">
+    <img src="leaf.png" style="width: 200px; margin: 20px;" />
+    <div class="cursive">
+        Mücella & Abdurrahman
+    </div>
+    <div class="cursive">
+        05.19.24
+    </div>
+  </div>
+<script>
+console.log("Hello fellow traveler, hope you don't have ill intentions");
+function onloadfn() {
+  loading_overlay.classList.add("hidden");
+  setInterval(function () {
+    loading_overlay.style = "display: none;";
+  }, 1200);
+}
+window.onload = onloadfn;
+setInterval(onloadfn, 5000);
+
+function countdown() {
+  var t = Math.floor(1716152400 - new Date().getTime() / 1000);
+  cd_seconds.innerHTML = t % 60;
+  t = Math.floor(t / 60);
+  cd_minutes.innerHTML = t % 60;
+  t = Math.floor(t / 60);
+  cd_hours.innerHTML = t % 24;
+  t = Math.floor(t / 24);
+  cd_days.innerHTML = t;
+}
+countdown();
+setInterval(countdown, 1000);
+
+function addChild(parent, type, content) {
+  var element = document.createElement(type);
+  parent.appendChild(element);
+  if (content) element.innerHTML = content;
+  return element;
+}
+
+var rsvp_response = {};
+function show_wedding_party(list) {
+  div_rsvp_state.innerHTML = "";
+  rsvp_response = {};
+  for (var i = 0; i < list.length; i++) {
+    var row = addChild(div_rsvp_state, "div");
+    var yes = addChild(row, "button", "Yes");
+    var no = addChild(row, "button", "No");
+    addChild(row, "span", list[i]["name"]);
+    row.className = "rsvp_row ssmall";
+    rsvp_response[list[i]["key"]] = list[i]["rsvp"];
+    yes.onclick = (function (key, yes, no) {
+      return function () {
+        rsvp_response[key] = "yes";
+        yes.className = "selected";
+        no.className = "";
+      };
+    })(list[i]["key"], yes, no);
+    no.onclick = (function (key, yes, no) {
+      return function () {
+        rsvp_response[key] = "no";
+        yes.className = "";
+        no.className = "selected";
+      };
+    })(list[i]["key"], yes, no);
+  }
+}
+function show_rsvp_response(list) {
+  div_rsvp_state.innerHTML = "";
+  addChild(div_rsvp_state, "div", "Successfully recorded RSVP");
+  for (var i = 0; i < list.length; i++) {
+    addChild(div_rsvp_state, "div", list[i]["name"] + ": " + list[i]["rsvp"]);
+  }
+}
+
+var rsvp_state = "init";
+function rsvp() {
+  var xhr = new XMLHttpRequest();
+  var url = "https://us-central1-akkashq.cloudfunctions.net/wedding";
+  xhr.open("POST", url, true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        console.log(xhr.responseText);
+        response = JSON.parse(xhr.responseText);
+        if (response["invitees"]) {
+          show_wedding_party(response["invitees"]);
+          rsvp_state = "invitees";
+          rsvp_name.style = "display: none;";
+        } else if (response["responses"]) {
+          show_rsvp_response(response["responses"]);
+          rsvp_state = "responses";
+        } else if (response["error"]) {
+          if (response["error"] == "already_submitted") {
+            div_rsvp_state.innerHTML = "<div class='center_content'>RSVP already submitted<br>Please contact bride for changes: 818-294-8422</div>";
+          } else {
+            div_rsvp_state.innerHTML = response["error"];
+          }
+          rsvp_state = "init";
+        } else {
+          div_rsvp_state.innerHTML = "Server error";
+          rsvp_state = "init";
+        }
+      } else {
+        div_rsvp_state.innerHTML = "Connection error";
+        rsvp_state = "init";
+      }
+    }
+  };
+  
+  if (rsvp_state == "init") {
+    var key = asciify(rsvp_name.value).toLowerCase().trim().replace(/ /g, '');
+    var data = JSON.stringify({"retrieve": key});
+    div_rsvp_state.innerHTML = "Retrieving wedding party...";
+    xhr.send(data);
+    rsvp_state = "awaiting";
+  } else if (rsvp_state == "invitees") {
+    var data = JSON.stringify({"update": rsvp_response});
+    div_rsvp_state.innerHTML = "Submitting RSVP...";
+    rsvp_button.style = "display: none;";
+    xhr.send(data);
+    rsvp_state = "awaiting";
+  }
+}
+</script>
+</body>
+</html>
