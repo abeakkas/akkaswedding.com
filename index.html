@@ -471,6 +471,12 @@ function rsvp() {
     xhr.send(data);
     rsvp_state = "awaiting";
   } else if (rsvp_state == "invitees") {
+    var all_responded = true;
+    Object.keys(rsvp_response).forEach(
+      function (key) {
+        if (!rsvp_response[key]) all_responded = false;
+      });
+    if (!all_responded) return;
     var data = JSON.stringify({"update": rsvp_response});
     div_rsvp_state.innerHTML = "Submitting RSVP...";
     rsvp_button.style = "display: none;";
