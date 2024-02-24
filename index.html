@@ -466,6 +466,10 @@ function rsvp() {
   
   if (rsvp_state == "init") {
     var key = asciify(rsvp_name.value).toLowerCase().trim().replace(/ /g, '');
+    if (key == "aysebayram") {
+      div_rsvp_state.innerHTML = "Multiple Ayse Bayram's in the database. Please enter someone else from the wedding party.";
+      return;
+    }
     var data = JSON.stringify({"retrieve": key});
     div_rsvp_state.innerHTML = "Retrieving wedding party...";
     xhr.send(data);
